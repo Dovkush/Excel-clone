@@ -15,7 +15,7 @@ for(let i=0;i<cells.length;i++){
          let child=addressBox.value;
            updateChildsInParent(child,cellObj);
            cellObj.parent=[];
-           cellObj.formula="";
+        //   cellObj.formula="";
        }
        cellObj.value=cells[i].textContent;
         //to update childrens of cell when we change value of cell
@@ -38,24 +38,23 @@ formulaBar.addEventListener("keydown",function(e){//event on formula bar
              return;
          }
         
-      let value=evaluateFormula(currentFormula);
+      
        
        //set childs in parent as if we change in cells's parent cell we can use this to change childs value
        setChildInParent(currentFormula);
-       console.log(cellObj.children);
+     console.log(cellObj.children);
        //set parents in child as if we change in child cell then the chain of formula break and 
        //child will not get affected if we change its parent
        setParentInChild(currentFormula);
        console.log(cellObj.parent);
        let isCircle=checkIfCircle(address,cellObj);
        if(isCircle){
-        
            invalidformula.style.display="block";
            updateChildsInParent(address,cellObj);
            cellObj.parent=[];
            return;
        }
-     
+       let value=evaluateFormula(currentFormula);
       //set cell value after evaluating formula and set the cell value and formula in sheetDB
       setCell(value,currentFormula); 
        updateChildrens(cellObj);//in case formula is changed

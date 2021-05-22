@@ -233,8 +233,8 @@ function handleAddressBox(e){
     let address=`${String.fromCharCode(65+cid)}${rid+1}`;
      addressBox.value=address;
      cellObj=sheetDB[rid][cid];
-     //console.log(cellObj.children);
-     //console.log(cellObj.parent);
+     console.log(cellObj.children);
+     console.log(cellObj.parent);
      //formula bar check set cells formula into formula bar
      if(cellObj.formula){
        formulaBar.value=cellObj.formula;
