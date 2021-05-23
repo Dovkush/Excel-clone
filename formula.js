@@ -15,8 +15,9 @@ for(let i=0;i<cells.length;i++){
          let child=addressBox.value;
            updateChildsInParent(child,cellObj);
            cellObj.parent=[];
-        //   cellObj.formula="";
-       }
+           cellObj.formula="";
+     }
+    
        cellObj.value=cells[i].textContent;
         //to update childrens of cell when we change value of cell
        updateChildrens(cellObj);

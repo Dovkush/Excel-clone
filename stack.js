@@ -48,7 +48,7 @@ function evaluate(exp){
          operator.push(o);
       }else if(o=='('){
           operator.push(o);
-      }else{
+      }else if(o>='0'&&0<='9'){
           operand.push(Number(o));
       }
  }
