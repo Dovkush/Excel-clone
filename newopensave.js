@@ -22,8 +22,20 @@ open.addEventListener("click",function(){
             fr.onload=function(){
                   sheetArray=fr.result;
                   sheetArray=JSON.parse(sheetArray);
-                  sheetDB=sheetArray[0];
-                  setUI();
+                  
+                  let allsheets=document.querySelectorAll(".sheet");
+               for(let i=1;i<allsheets.length;i++){
+                    allsheets[i].remove();
+                }
+               let len=sheetArray.length-1;
+                while(len!=0){
+                    addBtn.click();
+                    len--;
+                }
+                firstSheet.addEventListener("click",makeMeActive);
+                firstSheet.click();
+                
+                  
               }
          })
         
